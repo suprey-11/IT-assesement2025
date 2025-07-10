@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Brew & Bean Coffee Cafe</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .page-header {
+            background: linear-gradient(rgba(44, 24, 16, 0.7), rgba(44, 24, 16, 0.7)), url('images/blog-header.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 42px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .main-content {
+            padding: 56px 32px 56px 32px;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+        }
+
+        .blog-posts {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .blog-post {
+            background: #faf8f3;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-left: 5px solid #8b4513;
+            display: flex;
+            flex-direction: row;
+            align-items: stretch;
+            gap: 0;
+        }
+
+        .blog-post img {
+            width: 260px;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px 0 0 10px;
+            flex-shrink: 0;
+        }
+
+        .blog-post-content {
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .blog-post h2 {
+            font-size: 24px;
+            color: #2c1810;
+            margin-bottom: 10px;
+        }
+
+        .blog-meta {
+            color: #8b4513;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .blog-post p {
+            color: #5d4037;
+            margin-bottom: 15px;
+        }
+
+        .read-more {
+            color: #8b4513;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .read-more:hover {
+            color: #2c1810;
+            text-decoration: underline;
+        }
+
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .sidebar-widget {
+            background: #faf8f3;
+            padding: 25px;
+            border-radius: 10px;
+            border-top: 4px solid #8b4513;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .sidebar-widget h3 {
+            font-size: 20px;
+            color: #2c1810;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .recent-posts {
+            list-style: none;
+        }
+
+        .recent-posts li {
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #d2b48c;
+        }
+
+        .recent-posts li:last-child {
+            border-bottom: none;
+        }
+
+        .recent-posts a {
+            color: #2c1810;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .recent-posts a:hover {
+            color: #8b4513;
+        }
+
+        .recent-posts .post-date {
+            color: #8b4513;
+            font-size: 12px;
+        }
+
+        .categories {
+            list-style: none;
+        }
+
+        .categories li {
+            margin-bottom: 8px;
+        }
+
+        .categories a {
+            color: #2c1810;
+            text-decoration: none;
+            display: flex;
+            justify-content: space-between;
+            padding: 5px 0;
+        }
+
+        .categories a:hover {
+            color: #8b4513;
+        }
+
+        .category-count {
+            color: #8b4513;
+            font-size: 12px;
+        }
+
+        .tips-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .tips-table th {
+            background-color: #2c1810;
+            color: white;
+            padding: 12px;
+            text-align: left;
+            font-size: 14px;
+        }
+
+        .tips-table td {
+            padding: 12px;
+            border-bottom: 1px solid #d2b48c;
+            font-size: 13px;
+        }
+
+        .tips-table tr:nth-child(even) {
+            background-color: #f9f7f3;
+        }
+        .newsletter-form {
+            text-align: center;
+        }
+
+        .newsletter-form input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 2px solid #d2b48c;
+            border-radius: 5px;
+            font-family: inherit;
+        }
+
+        .newsletter-form button {
+            background-color: #8b4513;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: inherit;
+            font-weight: bold;
+        }
+
+        .newsletter-form button:hover {
+            background-color: #a0522d;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+
+        <section class="page-header">
+            <h1>Coffee Chronicles</h1>
+        </section>
+
+        <main class="main-content">
+            <div class="blog-grid">
+                <div class="blog-posts">
+                    <article class="blog-post">
+                        <img src="images/espresso.jpg" alt="Perfect espresso shot">
+                        <div class="blog-post-content">
+                            <h2>The Art of Perfect Espresso: A Barista's Guide</h2>
+                            <div class="blog-meta">Published on January 15, 2025 | By Sarah Martinez</div>
+                            <p>Creating the perfect espresso shot is both an art and a science. From selecting the right beans to mastering the grind size, every detail matters in crafting that perfect cup. In this comprehensive guide, we'll walk you through the essential steps that our master baristas use daily.</p>
+                            <p>The key to exceptional espresso lies in the balance of extraction time, pressure, and temperature. A properly pulled shot should have a rich crema, balanced acidity, and a smooth finish that lingers on the palate...</p>
+                            <a href="#" class="read-more">Read More →</a>
+                        </div>
+                    </article>
+
+                    <article class="blog-post">
+                        <img src="images/plantation.jpg" alt="Coffee plantation">
+                        <div class="blog-post-content">
+                            <h2>Exploring Coffee Origins: From Bean to Cup</h2>
+                            <div class="blog-meta">Published on January 10, 2025 | By Michael Chen</div>
+                            <p>Ever wondered where your morning coffee comes from? Join us on a journey through the world's premier coffee-growing regions, from the highlands of Ethiopia to the volcanic soils of Guatemala.</p>
+                            <p>Each origin brings unique characteristics to the cup - the bright acidity of African coffees, the chocolatey notes of Central American beans, and the earthy richness of Indonesian varieties...</p>
+                            <a href="#" class="read-more">Read More →</a>
+                        </div>
+                    </article>
+
+                    <article class="blog-post">
+                        <img src="images/latte.jpg" alt="Beautiful latte art">
+                        <div class="blog-post-content">
+                            <h2>Mastering Latte Art: Tips from Our Expert Baristas</h2>
+                            <div class="blog-meta">Published on January 5, 2025 | By Emma Rodriguez</div>
+                            <p>Latte art transforms a simple coffee drink into a work of art. Our skilled baristas share their secrets for creating beautiful patterns that not only look stunning but also indicate a perfectly steamed milk.</p>
+                            <p>Starting with the basics of milk steaming and pouring techniques, we'll guide you through creating hearts, rosettas, and even more complex designs...</p>
+                            <a href="#" class="read-more">Read More →</a>
+                        </div>
+                    </article>
+                </div>
+
+                <aside class="sidebar">
+                    <div class="sidebar-widget">
+                        <h3>Recent Posts</h3>
+                        <ul class="recent-posts">
+                            <li>
+                                <a href="#">The Art of Perfect Espresso</a>
+                                <div class="post-date">January 15, 2025</div>
+                            </li>
+                            <li>
+                                <a href="#">Exploring Coffee Origins</a>
+                                <div class="post-date">January 10, 2025</div>
+                            </li>
+                            <li>
+                                <a href="#">Mastering Latte Art</a>
+                                <div class="post-date">January 5, 2025</div>
+                            </li>
+                            <li>
+                                <a href="#">Cold Brew Revolution</a>
+                                <div class="post-date">December 28, 2024</div>
+                            </li>
+                            <li>
+                                <a href="#">Sustainable Coffee Practices</a>
+                                <div class="post-date">December 20, 2024</div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="sidebar-widget">
+                        <h3>Quick Brewing Tips</h3>
+                        <table class="tips-table">
+                            <tr>
+                                <th colspan="2">Brewing Method Comparison</th>
+                            </tr>
+                            <tr>
+                                <th>Method</th>
+                                <th>Brew Time</th>
+                            </tr>
+                            <tr>
+                                <td>Espresso</td>
+                                <td>25-30 seconds</td>
+                            </tr>
+                            <tr>
+                                <td>Pour Over</td>
+                                <td>3-4 minutes</td>
+                            </tr>
+                            <tr>
+                                <td>French Press</td>
+                                <td>4 minutes</td>
+                            </tr>
+                            <tr>
+                                <td>Cold Brew</td>
+                                <td>12-24 hours</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2">AeroPress</td>
+                                <td>1-2 minutes</td>
+                            </tr>
+                            <tr>
+                                <td>(Inverted method)</td>
+                            </tr>
+                        </table>
+                    </div>
+                </aside>
+            </div>
+        </main>
+
+        <footer style="width: 1000px; margin: 0 auto;">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <strong>Brew & Bean Coffee Cafe</strong><br>
+                    Kathmandu, Nepal<br>
+                    Phone: 9876543210 | Email: <a href="mailto:hello@brewandbean.com" style="color: #8b4513;">hello@brewandbean.com</a>
+                </div>
+                <div class="external-links">
+                    <a href="https://www.instagram.com" target="_blank">Instagram</a>
+                    <a href="https://www.facebook.com" target="_blank">Facebook</a>
+                    <a href="https://www.twitter.com" target="_blank">Twitter</a>
+                </div>
+            </div>
+            <nav class="footer-nav">
+                <a href="index.html">Home</a>
+                <a href="menu.html">Menu</a>
+                <a href="blog.html">Blog</a>
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact Us</a>
+            </nav>
+            <p style="margin-top: 20px; font-size: 12px;">&copy; 2025 Brew & Bean Coffee Cafe. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
