@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brew & Bean - Premium Coffee Experience</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .hero {
+            position: relative;
+            height: 420px;
+            overflow: hidden;
+        }
+
+        .slider {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1s;
+        }
+
+        .slide.active {
+            opacity: 1;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(0.2) brightness(0.92);
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(122, 122, 122, 0.55);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #111;
+        }
+
+        .hero h1 {
+            font-size: 44px;
+            margin-bottom: 18px;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 28px;
+            color: #4B2E19;
+        }
+
+        .cta-button {
+            background: #4B2E19;
+            color: #fff;
+            padding: 13px 28px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 18px;
+            font-weight: 600;
+            border: none;
+            transition: background 0.2s;
+            box-shadow: 0 2px 8px rgba(75,46,25,0.08);
+        }
+
+        .cta-button:hover {
+            background: #222;
+        }
+
+        .main-content {
+            padding: 56px 32px 56px 32px;
+        }
+
+        .section {
+            margin-bottom: 56px;
+        }
+
+        .section h2 {
+            font-size: 32px;
+            text-align: center;
+            margin-bottom: 24px;
+            color: #111;
+            border-bottom: 2px solid #4B2E19;
+            padding-bottom: 8px;
+            font-weight: 600;
+            width: 100%;
+        }
+
+        .features {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            margin-top: 32px;
+        }
+
+        .feature {
+            text-align: center;
+            flex: 1;
+            padding: 0 16px;
+        }
+
+        .feature img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 1px solid #4B2E19;
+            margin-bottom: 18px;
+        }
+
+        .feature h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: #111;
+            font-weight: 500;
+        }
+
+        .feature p {
+            font-size: 15px;
+            color: #444;
+        }
+
+        .coffee-bean {
+            position: absolute;
+            width: 18px;
+            height: 18px;
+            background: #4B2E19;
+            border-radius: 50%;
+            opacity: 0.08;
+        }
+
+        .coffee-bean::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 2px;
+            height: 14px;
+            background: #111;
+        }
+
+        table {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 1px 8px rgba(0,0,0,0.04);
+            overflow: hidden;
+        }
+        th, td {
+            border: none !important;
+        }
+        th {
+            background: #f7f7f7 !important;
+            color: #4B2E19;
+            font-weight: 600;
+        }
+        td {
+            color: #222;
+        }
+        tr {
+            border-bottom: 1px solid #eee;
+        }
+        tr:last-child {
+            border-bottom: none;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+        <section class="hero">
+            <div class="slider">
+                <div class="slide active">
+                    <img src="images/banner 1.jpg" alt="Banner 1">
+                </div>
+                <div class="slide">
+                    <img src="images/banner 2.jpg" alt="Banner 2">
+                </div>
+                <div class="slide">
+                    <img src="images/banner 3.jpg" alt="Banner 3">
+                </div>
+            </div>
+            <div class="hero-overlay">
+                <h1>Welcome to Brew & Bean</h1>
+                <p>Where Every Cup Tells a Story</p>
+                <a href="menu.html" class="cta-button">Explore Our Menu</a>
+            </div>
+        </section>
+
+        <main class="main-content" style=" width: 1500px; margin: 0 auto;">
+            <section class="section">
+                <h2>Our Coffee Experience</h2>
+                <p style="text-align: center; font-size: 18px; margin-bottom: 40px; color: #5d4037;">
+                    At Brew & Bean, we're passionate about delivering the perfect coffee experience. From bean to cup, 
+                    every step is crafted with precision and love.
+                </p>
+                
+                <div class="features">
+                    <div class="feature">
+                        <img src="images/beans.png" alt="Premium coffee beans">
+                        <h3>Premium Beans</h3>
+                        <p>We source the finest coffee beans from around the world, ensuring every cup delivers exceptional flavor and aroma.</p>
+                    </div>
+                    <div class="feature">
+                        <img src="images/brewing.jpg" alt="Expert brewing techniques">
+                        <h3>Expert Brewing</h3>
+                        <p>Our skilled baristas use traditional and modern techniques to extract the perfect flavor from every bean.</p>
+                    </div>
+                    <div class="feature">
+                        <img src="images/cafe-atmosphere.jpg" alt="Cozy cafe atmosphere">
+                        <h3>Cozy Atmosphere</h3>
+                        <p>Relax in our warm, inviting space designed for coffee lovers, students, and professionals alike.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>Why Choose Brew & Bean?</h2>
+                <table style="width: 100%; border-collapse: collapse; margin-top: 30px;">
+                    <tr style="background-color: #f8f6f0;">
+                        <th style="padding: 15px; border: 2px solid #8b4513; text-align: left; font-size: 18px;" colspan="2">Our Commitment to Excellence</th>
+                    </tr>
+                    <tr>
+                        <td style="padding: 15px; border: 1px solid #d2b48c; font-weight: bold; background-color: #faf8f3;">Quality</td>
+                        <td style="padding: 15px; border: 1px solid #d2b48c;">Premium beans, expert roasting, perfect brewing</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 15px; border: 1px solid #d2b48c; font-weight: bold; background-color: #faf8f3;">Community</td>
+                        <td style="padding: 15px; border: 1px solid #d2b48c;">A welcoming space for coffee enthusiasts to gather</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 15px; border: 1px solid #d2b48c; font-weight: bold; background-color: #faf8f3;" rowspan="2">Sustainability</td>
+                        <td style="padding: 15px; border: 1px solid #d2b48c;">Ethically sourced beans</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 15px; border: 1px solid #d2b48c;">Eco-friendly practices</td>
+                    </tr>
+                </table>
+            </section>
+        </main>
+
+        <footer style="width: 1000px; margin: 0 auto;">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <strong>Brew & Bean Coffee Cafe</strong><br>
+                    Kathmandu, Nepal<br>
+                    Phone: 9876543210 | Email: <a href="mailto:hello@brewandbean.com" style="color: #8b4513;">hello@brewandbean.com</a>
+                </div>
+                <div class="external-links">
+                    <a href="https://www.instagram.com" target="_blank">Instagram</a>
+                    <a href="https://www.facebook.com" target="_blank">Facebook</a>
+                    <a href="https://www.twitter.com" target="_blank">Twitter</a>
+                </div>
+            </div>
+            <nav class="footer-nav">
+                <a href="index.html">Home</a>
+                <a href="menu.html">Menu</a>
+                <a href="blog.html">Blog</a>
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact Us</a>
+            </nav>
+            <p style="margin-top: 20px; font-size: 12px;">&copy; 2025 Brew & Bean Coffee Cafe. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <div class="coffee-bean" style="top: 200px; left: 50px;"></div>
+    <div class="coffee-bean" style="top: 400px; right: 80px;"></div>
+    <div class="coffee-bean" style="top: 600px; left: 100px;"></div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        setInterval(() => {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }, 3500);
+    </script>
+</body>
+</html>
